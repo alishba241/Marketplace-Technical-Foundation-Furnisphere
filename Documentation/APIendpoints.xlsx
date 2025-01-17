@@ -1,0 +1,80 @@
+API ENDPOINTS
+
+Endpoint for product API:
+
+Endpoint:  /products
+Method:  GET
+Purpose: Fetch all products	 
+Response: [
+{
+       "product_name": "Trenton modular sofa_3",
+        "product_description": "A modern, versatile modular sofa designed for comfort and style. Its clean lines and customizable layout make it perfect for any living space.",
+        "price": 25000,
+        "ratings": 4.5,
+        "reviews": 7,
+        "stock": 8,
+        "colors_available": { "#6C757D", "#F1F3F5", "#2A2C2B" },
+        "sizes_available": { "L",  "XL","XS" },
+        "image": "https://res.cloudinary.com/dqc4xmj4g/image/upload/v1736284448/Trenton_modular_sofa_3_1_s5q1vn.png",
+        "id": "1"
+    },
+]
+
+Endpoint for Order API:
+
+Endpoint:  /orders
+Method:  POST
+Purpose: Create new order
+Payload: 
+{
+  "customer_info": {
+    "customer_id": "CUST123",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "1234567890",
+    "address": "123 Main St, New York, NY 10001"
+  },
+  "product_details": [
+    {
+      "product_id": "PROD001",
+      "name": "Product A",
+      "quantity": 2,
+      "price_per_unit": 50
+    },
+    {
+      "product_id": "PROD002",
+      "name": "Product B",
+      "quantity": 1,
+      "price_per_unit": 100
+    }
+  ],
+  "payment_status": {
+    "status": "Paid",
+    "payment_method": "Credit Card",
+    "transaction_id": "TXN987654321",
+    "amount_paid": 200
+  }
+}
+Response: {
+    "sale_id": "sale_id 17",
+    "quantity_sold": 51,
+    "sale_price": 89,
+    "date_of_sale": "date_of_sale 17",
+    "customer_id": "customer_id 17",
+    "id": "17"
+}
+
+
+Endpoint for Customer API:
+
+Endpoint:  /customer
+Method:  GET
+Purpose: Fetching a Specific Customer's Information 	 
+Response:  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "phone": "9876543210",
+    "address": "456 Elm St, Los Angeles, CA 90001"
+  }
+
